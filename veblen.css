@@ -1,15 +1,11 @@
+.nobr {
+   white-space: nowrap;
+}
 .supsub {
-    display: inline-block;
-}
-
-.supsub sup,
-.supsub sub {
-    position: relative;
-    display: block;
-    font-size: .5em;
-    line-height: 1.2;
-}
-
-.supsub sub {
-    top: .3em;
+   display: inline-block;
+   margin: -9em 0;
+   vertical-align: -0.55em;
+   line-height: 1.35em;
+   font-size: 70%;
+   text-align: left;
 }
