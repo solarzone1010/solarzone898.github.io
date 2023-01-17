@@ -1,11 +1,6 @@
-.nobr {
-   white-space: nowrap;
-}
 .supsub {
-   display: inline-block;
-   margin: -9em 0;
-   vertical-align: -0.55em;
-   line-height: 1.35em;
-   font-size: 70%;
-   text-align: left;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: middle;
 }
