@@ -1,6 +1,15 @@
 .supsub {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-between;
-    vertical-align: middle;
+    display: inline-block;
+}
+
+.supsub sup,
+.supsub sub {
+    position: relative;
+    display: block;
+    font-size: .5em;
+    line-height: 1.2;
+}
+
+.supsub sub {
+    top: .3em;
 }
