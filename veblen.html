@@ -8,7 +8,8 @@ In definitions, always use the first rule that applies.<br>
    &phi;(0,&alpha;) = &omega;<sup>&alpha;</sup><br>
    &phi;(&beta;,&alpha;) = (1+&alpha;)<sup>th</sup> point of &gamma;&mapsto;&phi;(&delta;,&gamma;) for all &delta;&lt;&beta; (&beta;&gt;0)
  </p>
- But you can also extend the function to 3 variables, like &phi;(&alpha;,&beta;,&gamma;).
+ But you can also extend the function to 3 variables, like &phi;(&alpha;,&beta;,&gamma;). So like, &phi;(1,0,0) = &Gamma;<sub>0</sub> = &phi;(&phi;(&phi;(...,0),0),0), &phi;(1,0,1) = <br>
+ &Gamma;<sub>1</sub> = &phi;(&phi;(&phi;(...&phi;(&phi;(1,0,0)+1,0)...,0),0),0), &phi;(1,1,0) = &phi;(1,0,&phi;(1,0,&phi;(1,0,...))), &phi;(2,0,0) = &phi;(1,&phi;(1,&phi;(1,...,0),0),0)
  <p style="margin-left:40px">
    <b>Definition:</b><br>
    &phi;(0,0,&alpha;) = &omega;<sup>&alpha;</sup><br>
@@ -21,7 +22,7 @@ In definitions, always use the first rule that applies.<br>
    Let Z<sub>k</sub> denote a list of k zeros.
    Let # denote an arbitrary list of ordinals
    &phi;(&alpha;) = &omega;<sup>&alpha;</sup><br>
-   &phi;(Z<sub>k</sub>,#) = &varphi;(#)<br>
+   &phi;(Z<sub>k</sub>,#) = &phi;(#)<br>
    &phi;(#,&beta;,Z<sub>k</sub>,&alpha;) = (1+&alpha;)<sup>th</sup> point of &gamma;&mapsto;&phi;(#,&delta;,&gamma;,Z<sub>k-1</sub>,0) for all &delta;&lt;&beta; (&beta;&gt;0)
  </p>
 </html>
