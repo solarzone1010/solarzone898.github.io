@@ -6,9 +6,9 @@
 .supsub sub {
     position: relative;
     display: block;
-    line-height: .45;
+    line-height: .6;
 }
 
 .supsub sub {
-    top: .45em;
+    top: .6em;
 }
