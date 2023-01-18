@@ -2,5 +2,6 @@
     display: inline-flex;
     flex-direction: column;
     vertical-align: top;
+    line-height: 1em;
     font-size: 80%;
 }
