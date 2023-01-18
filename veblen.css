@@ -1,14 +1,7 @@
 .supsub {
-    display: inline-block;
-}
-
-.supsub sup,
-.supsub sub {
-    position: relative;
-    display: block;
-    line-height: .6;
-}
-
-.supsub sub {
-    top: .6em;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: middle;
+    font-size: 80%
 }
