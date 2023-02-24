@@ -1,21 +1,25 @@
 <!-- time to see how good I am at HTML/JS -->
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Ordinal Explorer (tree)</title>
-		<script src="ordinalexplorer.js"></script>
-		<script>
-			function solve() {
-				let x=document.getElementById("exp").value;
-				y=x.split(' ');
-				document.getElementById("out").innerHTML = FS(y[0],y[1])
-			}
-		</script>
-	</head>
-	<body>
-		Expression: <input id="exp" /><br />
-		<button onclick="solve()">Solve!</button><br />
-		<span id="out"></span>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordinal Explorer (tree)</title>
+    <script src="ordinalexplorer.js"></script>
+    <script>
+      function solve() {
+        let x=document.getElementById("exp").value;
+        y=x.split(' ');
+        document.getElementById("out").innerHTML = FS(y[0],y[1]);
+        document.getElementById("ord").innerHTML = fancy(y[0]);
+        document.getElementById("ord1").innerHTML = fancy(FS(y[0],y[1]));
+      }
+    </script>
+  </head>
+  <body>
+    Expression: <input id="exp"/><br/>
+    <button onclick="solve()">Solve!</button><br/>
+    <span id="out"></span><br/>
+    <span id="ord"></span><br/>
+    <span id="ord1"></span>
+  </body>
 </html>
