@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>VebleNum.js</title>
+		<title>Ordinal Explorer (tree)</title>
 		<script src="ordinalexplorer.js"></script>
 		<script>
 			function solve() {
-				let x = document.getElementById("exp").value;
-				document.getElementById("out").innerHTML = FS(x,5)
+				let x=document.getElementById("exp").value;
+				y=x.split(' ');
+				document.getElementById("out").innerHTML = FS(y[0],y[1])
 			}
 		</script>
 	</head>
