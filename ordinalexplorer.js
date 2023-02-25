@@ -1,10 +1,11 @@
 function FS(a,n){
-  if(a==''){return''}
-  if(a.slice(-2)=='[]'){return a.slice(0,-2)}
-  let x=a.lastIndexOf('[]')+1;
+  if(a==''){return'';}
+  if(a.slice(-2)=='[]'){return a.slice(0,-2);}
+  if(a=='[W]'){return '['.repeat(n)+']'.repeat(n);}
+  let x=a.lastIndexOf('[]')++;
   let i=x;
   let p=-2;
-  while(p!=0){i-=1;p+=(a[i]=='[')?1:-1}
+  while(p!=0){i--;p+=(a[i]=='[')?1:-1}
   let o=a.slice(0,i)+(a.slice(i,x-1)+']').repeat(n);
   let l=o.split('[').length-o.split(']').length;
   o+=']'.repeat(l);
@@ -16,7 +17,7 @@ function fancy(a){
   let x=a[0];
   let i=1;
   let p=2;
-  while(p!=0){i+=1;p+=(a[i]=='[')?1:-1}
+  while(p!=0){i++;p+=(a[i]=='[')?1:-1}
   let e=a.slice(1,i);
   let k=a.slice(0,i+1);
   let c=a.slice(i+1);
@@ -31,4 +32,20 @@ function fancy(a){
   if(c!=''){s+=`+${fancy(c)}`};
   return s;
   }
+}
+function r(a){return a.replaceAll(']','!')}
+function binary(a){
+  a+='1';
+  let x='';
+  let y='[W]';
+  let d='';
+  for(let i of s){
+    let t=0;
+    while(r(FS(y,t))<=r(x)){t++;}
+    let d=FS(y,t);
+    if(i==0){y=d;}
+    else{x=d;}
+    if y.splice(-2)=='[]':return'?';
+  }
+  return d;
 }
