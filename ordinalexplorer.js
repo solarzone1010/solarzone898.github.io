@@ -52,7 +52,7 @@ function binary(a){
 function click(a){
   const k=document.getElementById(a);
   let e=document.body.getElementsByTagName("*");
-  let f=[]
+  let f=[];
   for(let i of e){f.push(i.id);}
   if(!(a+'1'in e)){
     const p=Number(k.style.marginLeft.slice(0,-2))+20
@@ -85,6 +85,20 @@ function click(a){
       k.after(x1);
       function F1(){click(x1.id);}
       x1.addEventListener('click',F1)}
+  }
+}
+function clickAllLeaves(){
+  let e=document.body.getElementsByTagName("*");
+  let f=[];
+  let g=[];
+  for(let i of e){f.push(i.id);}
+  for(let i of f){
+    k=1;
+    for(let j of f){if(j.slice(i.length)==i){k=0;}}
+    if(k){g.push(i);}
+  }
+  for(let i of g){
+    if(i!=''){click(i);}
   }
 }
 function begin(){click('_');}
