@@ -66,7 +66,9 @@ function click(a){
       x0.style=`margin-left:${p}px`;
     }
     let x1=document.createElement('div');
-    x1.innerHTML=fancy(binary(a+'1'));
+    let p=binary(a+'1');
+    if(/^(\[])*$/.test(a)){p=p.slice(-2);}
+    x1.innerHTML=fancy(p);
     x1.id='_'+a+'1';
     x1.style=`margin-left:${p}px`;
     if(binary(a+'0')!='?'){
