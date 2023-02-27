@@ -49,3 +49,38 @@ function binary(a){
   }
   return d;
 }
+function click(a){
+  const k=document.getElementById(a);
+  let e=document.body.getElementsByTagName("*");
+  let f=[]
+  for(let i of e){f.push(i.id);}
+  if(!(a+'1'in e)){
+    console.log(f);
+    const p=Number(k.style.marginLeft.slice(0,-2))+20
+    a=a.slice(1);
+    let x0=null;
+    if(binary(a+'0')!='?'){
+      x0=document.createElement('div');
+      x0.innerHTML=fancy(binary(a+'0'));
+      x0.id='_'+a+'0';
+      x0.style=`margin-left:${p}px`;
+    }
+    let x1=document.createElement('div');
+    x1.innerHTML=fancy(binary(a+'1'));
+    x1.id='_'+a+'1';
+    x1.style=`margin-left:${p}px`;
+    if(binary(a+'0')!='?'){
+      k.after(x0);
+      k.after(x1);
+      function F0(){click(x0.id);}
+      x0.addEventListener('click',F0);
+      function F1(){click(x1.id);}
+      x1.addEventListener('click',F1);
+    }
+    else{
+      k.after(x1);
+      function F1(){click(x1.id);}
+      x1.addEventListener('click',F1)}
+  }
+}
+function begin(){click('_');}
