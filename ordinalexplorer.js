@@ -55,24 +55,26 @@ function click(a){
   let f=[]
   for(let i of e){f.push(i.id);}
   if(!(a+'1'in e)){
-    console.log(f);
     const p=Number(k.style.marginLeft.slice(0,-2))+20
     a=a.slice(1);
     let x0=null;
     if(binary(a+'0')!='?'){
       x0=document.createElement('div');
-      x0.innerHTML=fancy(binary(a+'0'));
+      let q=fancy(binary(a+'0'));
+      console.log(q);
+      if(/^\d*$/.test(q)){q=(Number(q)-1).toString()}
+      x0.innerHTML=q;
       x0.id='_'+a+'0';
       x0.style=`margin-left:${p}px`;
     }
     let x1=document.createElement('div');
-    let q=binary(a+'1');
-    if(/^(\[])*$/.test(a)){q=q.slice(-2);}
-    x1.innerHTML=fancy(q);
+    let q=fancy(binary(a+'1'));
+    if(/^\d*$/.test(q)){q=(Number(q)-1).toString()}
+    x1.innerHTML=q;
     x1.id='_'+a+'1';
     x1.style=`margin-left:${p}px`;
     if(binary(a+'0')!='?'){
-      k.after(x0);
+      k.before(x0);
       k.after(x1);
       function F0(){click(x0.id);}
       x0.addEventListener('click',F0);
