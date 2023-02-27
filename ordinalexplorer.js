@@ -59,7 +59,7 @@ function click(a){
     a=a.slice(1);
     let x0=null;
     if(binary(a+'0')!='?'){
-      x0=document.createElement('div');
+      x0=document.createElement('button');
       let q=fancy(binary(a+'0'));
       console.log(q);
       if(/^\d*$/.test(q)){q=(Number(q)-1).toString()}
@@ -67,7 +67,7 @@ function click(a){
       x0.id='_'+a+'0';
       x0.style=`margin-left:${p}px`;
     }
-    let x1=document.createElement('div');
+    let x1=document.createElement('button');
     let q=fancy(binary(a+'1'));
     if(/^\d*$/.test(q)){q=(Number(q)-1).toString()}
     x1.innerHTML=q;
