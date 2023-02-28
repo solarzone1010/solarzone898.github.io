@@ -61,7 +61,6 @@ function click(a){
     if(binary(a+'0')!='?'){
       x0=document.createElement('div');
       let q=fancy(binary(a+'0'));
-      console.log(q);
       if(/^\d*$/.test(q)){q=(Number(q)-1).toString()}
       x0.innerHTML=q;
       x0.id='_'+a+'0';
