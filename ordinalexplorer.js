@@ -19,7 +19,7 @@ function fancy(a,n){
   let s='';
   switch(n){
     case 0:{
-      if(/^(\[])*$/.test(a)){return (a.length/2).toString()}
+      if(/^(\[])*$/.test(a)){return a.length/2+'';}
       let i=parenMatch(a,0,1)
       let e=a.slice(1,i);
       let k=a.slice(0,i+1);
@@ -36,20 +36,93 @@ function fancy(a,n){
     }
     case 1:{
       if(a==''){return'0';}
+      if(/(\[])+$/.test(a)){
+        let i=0
+        while(a.slice(-2)=='[]'){
+          i+=1;
+          a=a.slice(0,-2);
+        }
+        if(a.length==0){return i+'';}
+        return `${fancy(a,1)}+${i}`;
+      }
       let i=parenMatch(a,a.length-1,-1);
-      s=`${fancy(a.slice(0,i),1)}${fancy(a.slice(i+1,-1),1)}C`;
+      let e=a.slice(i+1,-1);
+      let k=a.slice(i);
+      let q='';
+      let b=0;
+      i=a.length-1;
+      while(1){
+        let j=parenMatch(a.slice(0,i),i,-1);
+        let p=a.slice(j+1,i);
+        let x=[];
+        let y=[];
+        let v=0;
+        let g=[];
+        while(1){
+          let t=parenMatch(e,v,1);
+          x.push(e.slice(v+1,t));
+          v=t+1;
+          if(v==e.length){break;}
+        }
+        v=0;
+        while(1){
+          let t=parenMatch(p,v,1);
+          y.push(p.slice(v+1,t));
+          v=t+1;
+          if(v==p.length){break;}
+        }
+        while(1){
+          if(x.length==0||y.length==0){break;}
+          if(x[0]!=y[0]){break;}
+          x=x.slice(1);
+          y=y.slice(1);
+        }
+        console.log(x,y)
+        if(x.length==0){
+          let w='';
+          while(y.length>0){w=`[${y.pop()}]`+w;}
+          g=w;
+        }
+        else if(y.length==0){
+          let z='';
+          while(y.length>0){z=`[${y.pop()}]`+z;}
+          g=z;
+        }
+        else{
+          let z='';
+          let w='';
+          while(x.length>0){z=`[${x.pop()}]`+z;}
+          while(y.length>0){w=`[${y.pop()}]`+w;}
+          if(z==w){g=z;}
+          if(r(z)>r(w)){g=z;}
+          if(r(w)>r(z)){g=w;}
+        }
+        q=`[${g}]`+q
+        if(j==0){break;}
+        i=j-1;
+      }
+      s='&omega;';
+      if(e!='[]'){s+=`<sup>${fancy(e,1)}</sup>`;}
+      if(/^(\[])*$/.test(q)&&q!='[]'){s+=q.length/2+'';}
+      else if(q!='[]'){s+=`&sdot;(${fancy(q,1)})`;}
       break;
     }
     case 2:{
-      if(a==''){return[];}
+      if(a==''){return'0';}
       let i=parenMatch(a,a.length-1,-1);
-      let q=fancy(a.slice(i+1,-1),2);
-      for(let i=0;i<q.length;i++){q[i]++;}
-      s=fancy(a.slice(0,i),2).concat([0].concat(q));
+      s=`${fancy(a.slice(0,i),2)}${fancy(a.slice(i+1,-1),2)}C`;
       break;
     }
     case 3:{
-      s=(a=='')?0:a;
+      if(a==''){return[];}
+      let i=parenMatch(a,a.length-1,-1);
+      let q=fancy(a.slice(i+1,-1),3);
+      for(let i=0;i<q.length;i++){q[i]++;}
+      s=fancy(a.slice(0,i),3).concat([0].concat(q));
+      break;
+    }
+    case 4:{
+      s=(a=='')?'0':a;
       break;
     }
   }
@@ -57,16 +130,14 @@ function fancy(a,n){
 }
 function trueFancy(a,n){
   let m=fancy(a,n);
-  let x=[2]
-  if(x.includes(n)){return(strMatrix(m));}
+  let x=[3]
+  if(x.includes(n)){if(a==[]){return'0';}return(strMatrix(m));}
   return m;
 }
 function strMatrix(a){
-  if(a.length==0){return'[empty]';}
+  if(a.length==0){return' ';}
   s='';
-  for(i of a){
-    s+=`(${i})`
-  }
+  for(i of a){s+=`(${i})`;}
   return s;
 }
 function r(a){return a.replaceAll(']','!')}
@@ -137,7 +208,7 @@ function expandAll(){
 }
 function changeFormat(){
   let example='[[][]][[]]';
-  format=(format+1)%4;
+  format=(format+1)%5;
   let e=document.body.getElementsByTagName('div');
   for(let i=0;i<e.length;i++){
     let q=trueFancy(binary(e[i].id.slice(1)),format);
