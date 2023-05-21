@@ -39,27 +39,27 @@ let update=setInterval(()=>{
 
                              if(oldgens[0]!=gens[0]){
                                clearInterval(gen0);
-                               gen0=setInterval(()=>{ord[0]+=gens[0]>20?Math.round(gens[0]/100):1;},gens[0]>0?(gens[0]>=100?10:1000/gens[0]):1e20);
+                               gen0=setInterval(()=>{ord[0]+=gens[0]>50?Math.round(gens[0]/50):1;},gens[0]>0?(gens[0]>=50?10:1000/gens[0]):1e20);
                              }
                              if(oldgens[1]!=gens[1]){
                                clearInterval(gen1);
-                               gen1=setInterval(()=>{gens[0]+=gens[1]>20?Math.round(gens[1]/20):1;},gens[1]>0?(gens[1]>=20?10:1000/gens[1]):1e20);
+                               gen1=setInterval(()=>{gens[0]+=gens[1]>50?Math.round(gens[1]/50):1;},gens[1]>0?(gens[1]>=50?10:1000/gens[1]):1e20);
                              }
                              if(oldgens[2]!=gens[2]){
                                clearInterval(gen2);
-                               gen2=setInterval(()=>{gens[1]+=gens[2]>20?Math.round(gens[2]/20):1;},gens[2]>0?(gens[2]>=20?10:1000/gens[2]):1e20);
+                               gen2=setInterval(()=>{gens[1]+=gens[2]>50?Math.round(gens[2]/50):1;},gens[2]>0?(gens[2]>=50?10:1000/gens[2]):1e20);
                              }
                              if(oldgens[3]!=gens[3]){
                                clearInterval(gen3);
-                               gen3=setInterval(()=>{gens[2]+=gens[3]>20?Math.round(gens[3]/20):1;},gens[3]>0?(gens[3]>=20?10:1000/gens[3]):1e20);
+                               gen3=setInterval(()=>{gens[2]+=gens[3]>50?Math.round(gens[3]/50):1;},gens[3]>0?(gens[3]>=50?10:1000/gens[3]):1e20);
                              }
                              if(oldgens[4]!=gens[4]){
                                clearInterval(gen4);
-                               gen4=setInterval(()=>{gens[3]+=gens[4]>20?Math.round(gens[4]/20):1;},gens[4]>0?(gens[4]>=20?10:1000/gens[4]):1e20);
+                               gen4=setInterval(()=>{gens[3]+=gens[4]>50?Math.round(gens[4]/50):1;},gens[4]>0?(gens[4]>=50?10:1000/gens[4]):1e20);
                              }
                              if(oldgens[5]!=gens[5]){
                                clearInterval(gen5);
-                               gen5=setInterval(()=>{gens[4]+=gens[5]>20?Math.round(gens[5]/20):1;},gens[5]>0?(gens[5]>=20?10:1000/gens[5]):1e20);
+                               gen5=setInterval(()=>{gens[4]+=gens[5]>50?Math.round(gens[5]/50):1;},gens[5]>0?(gens[5]>=50?10:1000/gens[5]):1e20);
                              }
                              oldgens=gens.slice()
                            },20)
