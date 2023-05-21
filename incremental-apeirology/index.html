@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width"> -->
+  <title>Incremental Apeirology</title>
+  <link href="incremental-apeirology.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="main.js"></script>
+  Your ordinal is <b><span style="font-size:16pt;" id="ord">0</span></b>.<br>
+  <button onclick="ordIncr_()">+1 ordinal</button><br>
+  <h3>Generators</h3>
+  <table>
+    <tr>
+      <td><b>Tier 1</b></td>
+      <td id="t1-gen">x0</td>
+      <td id="t1-gen-cost">10</td>
+      <td><button onclick="genIncr(0)">+1</button></td>
+    </tr>
+    <tr>
+      <td><b>Tier 2</b></td>
+      <td id="t2-gen">x0</td>
+      <td id="t2-gen-cost">10</td>
+      <td><button onclick="genIncr(1)">+1</button></td>
+    </tr>
+    <tr>
+      <td><b>Tier 3</b></td>
+      <td id="t3-gen">x0</td>
+      <td id="t3-gen-cost">10</td>
+      <td><button onclick="genIncr(2)">+1</button></td>
+    </tr>
+    <tr>
+      <td><b>Tier 4</b></td>
+      <td id="t4-gen">x0</td>
+      <td id="t4-gen-cost">10</td>
+      <td><button onclick="genIncr(3)">+1</button></td>
+    </tr>
+    <tr>
+      <td><b>Tier 5</b></td>
+      <td id="t5-gen">x0</td>
+      <td id="t5-gen-cost">10</td>
+      <td><button onclick="genIncr(4)">+1</button></td>
+    </tr>
+    <tr>
+      <td><b>Tier 6</b></td>
+      <td id="t6-gen">x0</td>
+      <td id="t6-gen-cost">10</td>
+      <td><button onclick="genIncr(5)">+1</button></td>
+    </tr>
+  </table>
+
+</body>
+
+</html>
