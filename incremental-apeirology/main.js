@@ -50,9 +50,9 @@ function doLayer1(){
   layer1Unlocked++;
   ordPointsX+=layer1Unlocked;
   let i=0;
-  let c=setInterval(()=>{gens=[0,0,0,0,0,0,0,0];i++;if(i==2){clearInterval(c);}},50);
+  let c=setInterval(()=>{gens=[0,0,0,0,0,0,0,0];i++;if(i>=5){clearInterval(c);}},50);
   i=0;
-  c=setInterval(()=>{ord=[0];i++;if(i==5){clearInterval(c);}},50);
+  d=setInterval(()=>{ord=[0];i++;if(i>=5){clearInterval(d);}},50);
 }
 function transfer(n){tab=n;}
 
