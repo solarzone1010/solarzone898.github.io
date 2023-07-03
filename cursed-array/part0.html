@@ -1,10 +1,27 @@
-<h3>Conventions</h3>
+<h2>Conventions</h2>
 A, A<sub>n</sub>, B, and C are 0 or [A<sub>0</sub>,A<sub>1</sub>,...,A<sub>k</sub>] for some natural k.<br>
 X and X<sub>n</sub> are empty or A<sub>0</sub>,A<sub>1</sub>,...,A<sub>k</sub> for some natural k.<br>
 L and L<sub>n</sub> are empty or A<sub>0</sub>,A<sub>1</sub>,...,A<sub>k</sub> for some natural k.<br>
 n$A$B = (n$A)$B; $ is left-associative.<br>
 Strings in {} are always repeated n times.<br>
-<h3>Definition</h3>
+<h2>Helper functions</h2>
+<h3>T(A)</h3>
+Define T(A) like so:
+<ol>
+  <li>T(0) = 0.</li>
+  <li>T([0]) = 1.</li>
+  Otherwise, let A = [A<sub>0</sub>,X].
+  <li>T(A) = T(A<sub>0</sub>).</li>
+</ol>
+<h3>P(A)</h3>
+Define P(A) like so:
+<ol>
+  <li>P(0) is undefined.</li>
+  <li>P([0]) = 1.</li>
+  Otherwise, let A = [A<sub>0</sub>,X].
+  <li>P(A) = [P(A<sub>0</sub>),X].</li>
+</ol>
+<h2>Definition</h2>
 We start with n$A for some A, and natural n. This solves into the "result".
 <ol>
   <li>
@@ -38,21 +55,4 @@ We start with n$A for some A, and natural n. This solves into the "result".
     Then, replace C with [L, {[} 0 {,P(B),X]} ,P(B),X] in A. Call this new array A'.<br>
     The result is 10$A'.
   </li>
-</ol>
-<h3>Helper functions</h3>
-<h4>T(A)</h4>
-Define T(A) like so:
-<ol>
-  <li>T(0) = 0.</li>
-  <li>T([0]) = 1.</li>
-  Otherwise, let A = [A<sub>0</sub>,X].
-  <li>T(A) = T(A<sub>0</sub>).</li>
-</ol>
-<h4>P(A)</h4>
-Define P(A) like so:
-<ol>
-  <li>P(0) is undefined.</li>
-  <li>P([0]) = 1.</li>
-  Otherwise, let A = [A<sub>0</sub>,X].
-  <li>P(A) = [P(A<sub>0</sub>),X].</li>
 </ol>
