@@ -31,7 +31,7 @@ We start with n$A for some A, and natural n. This solves into the "result".
     Value of T(A)?
     <ol>
       <li>0: Jump to 3.</li>
-      <li>1: Result is 10{$P(A)}.</li>
+      <li>1: Result is 1 {$P(A)}.</li>
     </ol>
   </li>
   Otherwise, look at the first entry of A. Assume the array you are currently looking at is B.
@@ -53,6 +53,6 @@ We start with n$A for some A, and natural n. This solves into the "result".
   <li>
     Let C = [L,0,B,X], where C is the smallest array that B is contained in that is in A.<br>
     Then, replace C with [L, {[} 0 {,P(B),X]} ,P(B),X] in A. Call this new array A'.<br>
-    The result is 10$A'.
+    The result is 1$A'.
   </li>
 </ol>
